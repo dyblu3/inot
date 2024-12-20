@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notification Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Notification Generator</h2>
+        
+        <label for="formatNumber">Number:</label>
+        <input type="text" id="formatNumber">
+        
+        <div class="multi-select">
+            <label>Satelit:</label>
+            <div id="satelitSelect">
+                <input type="checkbox" id="SES12">
+                <label for="SES12">SES12</label>
+                <input type="checkbox" id="SES9">
+                <label for="SES9">SES9</label>
+                <input type="checkbox" id="IPSTAR">
+                <label for="IPSTAR">IPSTAR</label>
+                <input type="checkbox" id="KACIFIC">
+                <label for="KACIFIC">KACIFIC</label>
+                <input type="checkbox" id="JCSAT">
+                <label for="JCSAT">JCSAT</label>
+            </div>
+        </div>
+        
+        <div class="multi-select">
+            <label>Projek:</label>
+            <div id="projekSelect">
+                <input type="checkbox" id="LC1">
+                <label for="LC1">LC1</label>
+                <input type="checkbox" id="LC2">
+                <label for="LC2">LC2</label>
+                <input type="checkbox" id="AI">
+                <label for="AI">AI</label>
+                <input type="checkbox" id="BB">
+                <label for="BB">BB</label>
+                <input type="checkbox" id="RT">
+                <label for="RT">RT</label>
+                <input type="checkbox" id="MTD">
+                <label for="MTD">MTD</label>
+                <input type="checkbox" id="IBS">
+                <label for="IBS">IBS</label>
+                <input type="checkbox" id="APSAT">
+                <label for="APSAT">APSAT</label>
+                <input type="checkbox" id="MORA">
+                <label for="MORA">MORA</label>
+                <input type="checkbox" id="MP">
+                <label for="MP">MP</label>
+            </div>
+        </div>
+        
+        <label for="pihakEskalasi">Pihak Eskalasi:</label>
+        <select id="pihakEskalasi">
+            <option value="">Select Pihak Eskalasi</option>
+            <option value="IPT-NOC">IPT-NOC</option>
+            <option value="IPT-CONFIGURATION">IPT-CONFIGURATION</option>
+            <option value="IPT-MORA">IPT-MORA</option>
+            <option value="IPT-KTP">IPT-KTP</option>
+        </select>
+        
+        <label for="status">Status:</label>
+        <select id="status">
+            <option value="Open" selected>Open</option>
+            <option value="Close">Close</option>
+        </select>
+        
+        <label for="impact">Impact Service:</label>
+        <input type="radio" id="impactYes" name="impact" value="Yes"> Yes
+        <input type="radio" id="impactNo" name="impact" value="No" checked> No
+        
+        <label for="numberTicket">Ticket Number:</label>
+        <input type="text" id="numberTicket">
+        
+        <label for="deskripsiInot">Incident Description:</label>
+        <textarea id="deskripsiInot" rows="4"></textarea>
+        
+        <label for="rootcause">Root Cause:</label>
+        <textarea id="rootcause" rows="4">Under Investigation</textarea>
+        
+        <label for="progressUpdate">Progress Update:</label>
+        <textarea id="progressUpdate" rows="4"></textarea>
+        
+        <div class="time-inputs">
+            <div>
+                <label for="startTimeHour">Start TT (Hour):</label>
+                <input type="number" id="startTimeHour" min="0" max="23">
+            </div>
+            <div>
+                <label for="startTimeMinute">Minute:</label>
+                <input type="number" id="startTimeMinute" min="0" max="59">
+            </div>
+        </div>
+        
+        <div class="time-inputs">
+            <div>
+                <label for="progressTimeHour">Progress Update (Hour):</label>
+                <input type="number" id="progressTimeHour" min="0" max="23">
+            </div>
+            <div>
+                <label for="progressTimeMinute">Minute:</label>
+                <input type="number" id="progressTimeMinute" min="0" max="59">
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button onclick="createNotification()">Generate Notification</button>
+            <button onclick="clearText()">Clear</button>
+            <button onclick="copyText()">Copy</button>
+            <button onclick="exitProgram()">Exit</button>
+        </div>
+        
+        <div id="result" class="result"></div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
